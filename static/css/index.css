@@ -1,0 +1,92 @@
+body {
+  padding-top: 5rem;
+}
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+.form-search{
+  width: 100%;
+  max-width: 640px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-search label {
+  width: 80px;
+}
+
+.form-search input[type="search"] {
+  width: 400px;
+}
+
+.search-btn{
+  width: 120px;
+}
+
+.form-search-nav{
+  width: 100%;
+  max-width: 480px;
+  margin: 0 0;
+}
+
+.form-search-nav input[type="text"]{
+  width: 350px;
+}
+
+/* *{
+  margin:0px;
+  padding:0px;
+} */
+
+#pingji-box{
+  display: flex;
+}
+
+.label-group{
+  /* max-width: 640px; */
+  margin: 0px 0px;
+  box-sizing: border-box;
+}
+
+.pingji-ul{
+  list-style: none;
+}
+
+.pingji-ul > li{
+  margin-bottom: 60px;
+}
+
+.triangle{
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  margin-left: -14px;
+  width:0;
+  height:0;
+  border-style: solid;
+  border-width: 15px;
+}
+
+.label-item{
+  width: 612px;
+  padding-left: 0px;
+  padding-right: 0px;
+  box-sizing: border-box;  
+}
+.label{
+  float:left;
+  position: relative;
+  padding-left: 0px;
+  padding-right: 0px;
+  display: inline-block;
+  width: 68px;
+  height: 26px;
+  font-weight: 300;
+  line-height: 26px;
+  text-align: center;
+  background-color: #434343;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 1px;
+}

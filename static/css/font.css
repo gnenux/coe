@@ -1,0 +1,21 @@
+/* @font-face {
+/*    font-family: "tyc-num";
+/*    src: url('https://static.tianyancha.com/fonts-styles/fonts/ac/acca9f91/tyc-num.eot'); /* IE9*/
+/*    src: url('https://static.tianyancha.com/fonts-styles/fonts/ac/acca9f91/tyc-num.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+/*    url('https://static.tianyancha.com/fonts-styles/fonts/ac/acca9f91/tyc-num.woff') format('woff'), /* chrome, firefox */
+/*    url('https://static.tianyancha.com/fonts-styles/fonts/ac/acca9f91/tyc-num.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+/*    url('https://static.tianyancha.com/fonts-styles/fonts/ac/acca9f91/tyc-num.svg#tic') format('svg'); /*iOS 4.1-*/
+/*  } 
+*/
+  
+@font-face {
+    font-family: "tyc-num";
+    src: url('/static/fonts/tyc-num.ttf') format('truetype');
+}
+
+.tyc-num {
+    font-family: "tyc-num" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }

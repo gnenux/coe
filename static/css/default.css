@@ -1,0 +1,38 @@
+body {
+  padding-top: 5rem;
+}
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+
+.form-search{
+  width: 100%;
+  max-width: 640px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-search label {
+  width: 80px;
+}
+
+.form-search input[type="search"] {
+  width: 400px;
+}
+
+.search-btn{
+  width: 120px;
+}
+
+.form-search-nav{
+  width: 100%;
+  max-width: 480px;
+  padding: 15px;
+  margin: 0 0;
+}
+
+.form-search-nav input[type="search"]{
+  width: 320px;
+}

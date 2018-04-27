@@ -1,0 +1,311 @@
+  <div class="container text-center">
+    <div class="row align-items-center">
+      <div class="col-4">
+        <table class="table">
+          <tbody>
+            <tr>
+              <th scope="row">企业名称</th>
+              <td>{{.Company.Name}}</td>
+            </tr>
+            <tr>
+              <th scope="row">企业状态</th>
+              <td>{{.Company.State}}</td>
+            </tr>
+            <tr>
+              <th scope="row">企业类型</th>
+              <td>{{.Company.CompanyType}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-auto">
+        <ul class="pingji-ul">
+          <li>
+            <h4>信用评级</h4>
+            <p hidden>{{.Company.Points}}</p>
+          </li>
+          <li>
+            <div id="pingji-box">
+              <div class="label-group">
+                <div class="label-item">
+                  <div class="label" style="background: linear-gradient(to right, rgb(114, 194, 49), rgb(148, 201, 48));">A+
+                    {{ if le .Company.Points 0}}
+                    <div class="triangle c-triangle" style="border-color: rgb(130, 197, 49) transparent transparent transparent;"></div>  
+                    {{else if ge .Company.Points 95}}
+                    <div class="triangle c-triangle" style="border-color: rgb(130, 197, 49) transparent transparent transparent;"></div>
+                    {{end}}
+                    <!---->
+                  </div>
+                  <div class="label" style="background: linear-gradient(to right, rgb(148, 201, 48), rgb(180, 207, 47));">A
+                    {{if lt .Company.Points 95}}
+                    {{if ge .Company.Points 90}}
+                    <div class="triangle c-triangle" style="border-color: rgb(160, 204, 47) transparent transparent transparent;"></div>
+                    {{end}}
+                    {{end}}
+                    <!---->
+                  </div>
+                  <div class="label" style="background: linear-gradient(to right, rgb(180, 207, 47), rgb(213, 207, 47));">A-
+                      {{if lt .Company.Points 90}}
+                      {{if ge .Company.Points 85}}
+                      <div class="triangle c-triangle" style="border-color: rgb(197, 207, 47) transparent transparent transparent;"></div>
+                      {{end}}
+                      {{end}}
+                    <!---->
+                  </div>
+                  <div class="label" style="background: linear-gradient(to right, rgb(213, 207, 47), rgb(232, 207, 47));">B
+                      {{if lt .Company.Points 85}}
+                      {{if ge .Company.Points 80}}
+                      <div class="triangle c-triangle" style="border-color: rgb(223, 207, 47) transparent transparent transparent;"></div>
+                      {{end}}
+                      {{end}}
+                    
+                    <!---->
+                  </div>
+                  <div class="label" style="background: linear-gradient(to right, rgb(232, 207, 47), rgb(252, 203, 48));">C
+                      {{if lt .Company.Points 80}}
+                      {{if ge .Company.Points 75}}
+                      <div class="triangle c-triangle" style="border-color: rgb(242, 207, 47) transparent transparent transparent;"></div>
+                      {{end}}
+                      {{end}}
+                  </div>
+                  <div class="label" style="background: linear-gradient(to right, rgb(252, 203, 48), rgb(252, 173, 55));">D
+                      {{if lt .Company.Points 75}}
+                      {{if ge .Company.Points 70}}
+                      <div class="triangle c-triangle" style="border-color: rgb(252, 188, 52) transparent transparent transparent;"></div>
+                      {{end}}
+                      {{end}}
+                    <!---->
+                  </div>
+                  <div class="label" style="background: linear-gradient(to right, rgb(252, 173, 55), rgb(252, 123, 67));">E
+                      {{if lt .Company.Points 70}}
+                      {{if ge .Company.Points 65}}
+                      <div class="triangle c-triangle" style="border-color: rgb(252, 148, 61) transparent transparent transparent;"></div>
+                      {{end}}
+                      {{end}}
+                    <!---->
+                  </div>
+                  <div class="label" style="background: linear-gradient(to right, rgb(252, 123, 67), rgb(251, 79, 56));">F
+                      {{if lt .Company.Points 65}}
+                      {{if ge .Company.Points 50}}
+                      <div class="triangle c-triangle" style="border-color: rgb(252, 101, 62) transparent transparent transparent;"></div>
+                      {{end}}
+                      {{end}}
+                    <!---->
+                  </div>
+                  <div class="label" style="background: linear-gradient(to right, rgb(251, 79, 56), rgb(251, 79, 56));">T
+                      {{if lt .Company.Points 50}}
+                      {{if gt .Company.Points 0}}
+                      <div class="triangle c-triangle" style="border-color: rgb(251, 79, 56) transparent transparent transparent;"></div>
+                      {{end}}
+                      {{end}}
+                    <!---->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <h4>企业基本信息</h4>
+      <table class="table table-bordered text-center">
+        <tbody>
+          <tr>
+            <th  scope="row">法定代表人姓名</th>
+            <td>{{.Company.LegalPerson}}</td>
+          </tr>
+          <tr>
+            <th  scope="row">纳税人识别号</th>
+            <td>{{.Company.TaxpayerIdentificationNumber}}</td>
+          </tr>
+          <tr>
+            <th  scope="row">注册资本</th>
+            <td>{{.Company.RegisteredCapital}}</td>
+          </tr>
+          <tr>
+            <th  scope="row">注册时间</th>
+            <td>{{.Company.RegistrationTime}}</td>
+          </tr>
+          <tr>
+            <th  scope="row">核准时间</th>
+            <td>{{.Company.ApprovalTime}}</td>
+          </tr>
+          <tr>
+            <th  scope="row">营业期限</th>
+            <td>{{.Company.OperationPeriod}}</td>
+          </tr>
+          <tr>
+            <th  scope="row">工商注册号</th>
+            <td>{{.Company.BusinessRegistrationNumber}}</td>
+          </tr>
+          <tr>
+            <th  scope="row">组织机构代码</th>
+            <td>{{.Company.OrganizationCode}}</td>
+          </tr>
+          <tr>
+            <th  scope="row">信用识别码</th>
+            <td>{{.Company.CreditIdentificationCode}}</td>
+          </tr>
+          <tr>
+            <th  scope="row">行业</th>
+            <td>{{.Company.Trade}}</td>
+          </tr>
+          <tr>
+            <th  scope="row">登记机关</th>
+            <td>{{.Company.RegistrationAuthority}}</td>
+          </tr>
+          <tr>
+            <th  scope="row">注册地址</th>
+            <td>{{.Company.RegisteredAddress}}</td>
+          </tr>
+          <tr>
+            <th class="w-25" scope="row">经营范围</th>
+            <td>{{.Company.ManagementScope}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row">
+      <h4>行政处罚</h4>
+      <table class="table table-bordered text-center">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">决定书文号</th>
+            <th scope="col">内容</th>
+            <th scope="col">日期</th>
+            <th scope="col">决定机关</th>
+            <th scope="col">处分</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{range .Penalties}}
+          <tr>
+            <th scope="row">{{.ID}}</th>
+            <td>{{.PunishNumber}}</td>
+            <td>{{.Content}}</td>
+            <td>{{.Date}}</td>
+            <td>{{.Decision}}</td>
+            <!-- <td>-{{.Points}}</td> -->
+            <td>-</td>
+          </tr>
+          {{end}}
+        </tbody>
+      </table>
+    </div>
+    <div class="row">
+      <h4>经营异常</h4>
+      <table class="table table-bordered text-center">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">原因</th>
+            <th scope="col">日期</th>
+            <th scope="col">决定机关</th>
+            <th scope="col">处分</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{range .BadManagements}}
+          <tr>
+            <th scope="row">{{.ID}}</th>
+            <td>{{.Reason}}</td>
+            <td>{{.Date}}</td>
+            <td>{{.Decision}}</td>
+            <!-- <td>-{{.Points}}</td> -->
+            <td>-</td>
+          </tr>
+          {{end}}
+        </tbody>
+      </table>
+    </div>
+    <div class="row">
+      <h4>严重处罚</h4>
+      <table class="table table-bordered text-center">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">原因</th>
+            <th scope="col">日期</th>
+            <th scope="col">决定机关</th>
+            <th scope="col">处分</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{range .BlackList}}
+          <tr>
+            <th scope="row">{{.ID}}</th>
+            <td>{{.Reason}}</td>
+            <td>{{.Date}}</td>
+            <td>{{.Decision}}</td>
+            <!-- <td>-{{.Points}}</td> -->
+            <td>-</td>
+          </tr>
+          {{end}}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="row">
+        <h4>法律诉讼</h4>
+        <table class="table table-bordered text-center">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">标题</th>
+              <th scope="col">类型</th>
+              <th scope="col">日期</th>
+              <th scope="col">处分</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{range .Lawsuits}}
+            <tr>
+              <th scope="row">{{.ID}}</th>
+              <td>{{.Name}}</td>
+              <td>{{.Type}}</td>
+              <td>{{.Date}}</td>
+              <!-- <td>-{{.Points}}</td> -->
+              <td>-</td>
+            </tr>
+            {{end}}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="row">
+          <h4>法院公告</h4>
+          <table class="table table-bordered text-center">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">日期</th>
+                <th scope="col">上诉方</th>
+                <th scope="col">被诉方</th>
+                <th scope="col">公告类型</th>
+                <th scope="col">法院</th>
+                <th scope="col">内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{range .Courts}}
+              <tr>
+                <th scope="row">{{.ID}}</th>
+                <td>{{.Date}}</td>
+                <td>{{.Party1}}</td>
+                <td>{{.Party2}}</td>
+                <td>{{.Type}}</td>
+                <td>{{.CourtCode}}</td>
+                <td class="w-50">{{.Content}}</td>
+              </tr>
+              {{end}}
+            </tbody>
+          </table>
+        </div>
+
+  </div>

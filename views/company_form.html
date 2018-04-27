@@ -1,0 +1,127 @@
+<div class="container">
+    <form>
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="name">企业名称：</label>
+                <input type="text" class="form-control is-valid" id="name" placeholder="请填写企业名称" name="name" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="state">企业状态：</label>
+                <select class="form-control" id="state" name="state" required>
+                    <option>在业</option>
+                    <option>存续</option>
+                    <option>吊销</option>
+                    <option>注销</option>
+                    <option>迁出</option>
+                    <option>迁入</option>
+                    <option>停业</option>
+                    <option>清算</option>
+                </select>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="company_type">公司类型：</label>
+                <input type="text" class="form-control" id="company_type" name="company_type" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-3 mb-3">
+                <label for="legal_person">法定代表人姓名：</label>
+                <div class="input-group">
+                    <input type="text" class="form-control is-invalid" id="legal_person" placeholder="法定代表人姓名" name="legal_person" required>
+                    <div class="invalid-feedback">
+                        Please choose a username.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="taxpayer_identification_number">纳税人识别号:</label>
+                <input type="text" class="form-control" id="taxpayer_identification_number" name="taxpayer_identification_number" required>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="registered_capital">注册资本（单位：万元）：</label>
+                <input type="text" class="form-control is-invalid" id="registered_capital" placeholder="请填写注册资本" name="registered_capital"
+                    required>
+                <div class="invalid-feedback">
+                    Please provide a valid city.
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-3 mb-3">
+                <label for="registration_time">注册时间：</label>
+                <input type="date" class="form-control is-invalid" id="registration_time" name="registration_time" required>
+                <div class="invalid-feedback">
+                    Please provide a valid state.
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="approval_time">核准时间：</label>
+                <input type="date" class="form-control is-invalid" id="approval_time" name="approval_time" required>
+                <div class="invalid-feedback">
+                    Please provide a valid zip.
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="operation_period">营业期限（起始日期）：</label>
+                <input type="date" class="form-control" id="operation_period" name="operation_period_start" required>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="operation_period">营业期限（结束日期）：</label>
+                <input type="date" class="form-control" id="operation_period" name="operation_period_end" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="business_registration_number">工商注册号：</label>
+                <input type="text" class="form-control" id="business_registration_number" name="business_registration_number" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="organization_code">组织机构代码：</label>
+                <input type="text" class="form-control" id="organization_code" name="organization_code" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="credit_identification_code">信用识别码：</label>
+                <input type="text" class="form-control" id="credit_identification_code" name="credit_identification_code" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="trade">行业：</label>
+                <input type="text" class="form-control" id="trade" name="trade" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-8 mb-3">
+                <label for="registration_authority">登记机关：</label>
+                <input type="text" class="form-control" id="registration_authority" name="registration_authority" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-8 mb-3">
+                <label for="registered_address">注册地址：</label>
+                <input type="text" class="form-control" id="registered_address" name="registered_address" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="management_scope">经营范围：</label>
+            <textarea class="form-control" id="management_scope" name="management_scope"></textarea>
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+                <label class="form-check-label" for="invalidCheck3">
+                    Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                    You must agree before submitting.
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
