@@ -9,6 +9,11 @@ type SearchController struct {
 	beego.Controller
 }
 
+type BasicCompany struct {
+	ID   int
+	Name string
+}
+
 func (this *SearchController) Get() {
 	this.Data["Title"] = "查询结果"
 	this.Data["URL"] = URL
@@ -24,6 +29,15 @@ func (this *SearchController) Get() {
 			this.Data["Error"] = err.Error()
 			this.TplName = "error.html"
 		} else {
+			if this.Ctx.Input.AcceptsJSON() {
+				bcs := []BasicCompany{}
+				for _, v := range *companies {
+					bcs = append(bcs, BasicCompany{v.ID, v.Name})
+				}
+				this.Data["json"] = &bcs
+				this.ServeJSON()
+				return
+			}
 			this.Data["Companies"] = companies
 			this.TplName = "companies.html"
 		}

@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"encoding/json"
-	"fmt"
 	"strings"
 
 	"github.com/astaxie/beego"
@@ -33,7 +32,6 @@ func (this *CompaniesController) Create() {
 		this.CustomAbort(403, err.Error())
 		return
 	}
-	fmt.Println(id)
 	this.Ctx.WriteString(id)
 	this.Ctx.ResponseWriter.WriteHeader(201)
 

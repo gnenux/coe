@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"reflect"
+	"sort"
 	"strings"
 
 	"github.com/gomodule/redigo/redis"
@@ -46,6 +47,7 @@ func getCompanyKey(id int) string {
 }
 
 func getCompaniesKey(keys []string) string {
+	sort.Strings(keys)
 	return strings.Join(keys, "")
 }
 
@@ -74,6 +76,13 @@ func setCompanyToRedis(c *Company) error {
 
 	_, err = conn.Do("SET", getCompanyKey(c.ID), b, "EX", EXTime)
 	return err
+}
+
+func delCompanyFromRedis(id int) {
+	conn := RedisPool.Get()
+	defer conn.Close()
+
+	conn.Do("DEL", getCompanyKey(id))
 }
 
 func setCompaniesToRedis(keys []string, companies *[]Company) error {
@@ -257,10 +266,17 @@ func UpdateCompany(c *Company) error {
 		c.RegisteredAddress,
 		c.ManagementScope,
 		c.ID).Exec()
+
+	delCompanyFromRedis(c.ID)
 	return err
 }
 
 func DeleteCompany(id int) error {
 	_, err := O.Raw("DELETE FROM companies WHERE id = ?;", id).Exec()
-	return err
+	if err != nil {
+		return err
+	}
+
+	delCompanyFromRedis(id)
+	return nil
 }
